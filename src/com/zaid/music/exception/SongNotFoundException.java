@@ -1,4 +1,8 @@
 package com.zaid.music.exception;
 
-public class SongNotFound {
+public class SongNotFoundException extends Exception {
+    public SongNotFoundException(String message) {
+        super(message);
+    }
+
 }
