@@ -15,11 +15,13 @@ public class MusicService {
 
     // Get song by ID
     public Song getSongById(int id) throws SongNotFoundException{
+        //Checking if id is valid or not
         if(id<=0){
             throw new IllegalArgumentException("Enter a valid ID");
         }
 
         Song song = repo.getSongById(id);
+        //Checking if song exists or not, if not throwing an error
         if(song == null){
             throw new SongNotFoundException("Song with ID " + id + " not found");
         }
@@ -28,6 +30,7 @@ public class MusicService {
 
     // Add Song
     public void addSong(Song song){
+        //Checking if song exists or not, if not throwing an error
         if(song == null){
             throw new IllegalArgumentException("Song cannot be null");
         }
@@ -36,11 +39,15 @@ public class MusicService {
 
     // Delete Song
     public void deleteSong(int id) throws SongNotFoundException{
+
+        //Throwing error because of illegal argument
         if (id<=0){
             throw new IllegalArgumentException("Enter a valid ID");
         }
 
         Song song = repo.getSongById(id);
+
+        //Checking if song exists or not, if not throwing an error
         if(song == null){
             throw new SongNotFoundException("Song with ID "+ id +" not found");
         }

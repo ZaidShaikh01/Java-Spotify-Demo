@@ -7,6 +7,7 @@ public class Playlist {
     private int id;
     private String title;
     private List<Song> songs;
+
     // Constructor for playlist
     public Playlist(int id, String title) {
         this.id = id;
@@ -38,11 +39,13 @@ public class Playlist {
         }
         songs.add(song);
     }
+
     // Remove song method
     public void removeSong(Song song){
         // Todo to check whether a song exist or not, try catch
         songs.remove(song);
     }
+
     // Overriding toStringMethod
     @Override
     public String toString() {
