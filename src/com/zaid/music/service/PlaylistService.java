@@ -21,7 +21,7 @@ public class PlaylistService {
     // createPlaylist()
     public Playlist createPlaylist(User user, String name){
         // Checking whether all the inputs are valid or not
-        if(user == null || name ==null || name.isEmpty()){
+        if(name.isEmpty()){
             throw new IllegalArgumentException("Invalid input");
         }
         // Initalizing a playlist and incrementing the playlistId counter
@@ -77,10 +77,6 @@ public class PlaylistService {
 
     // Get Playlist or throw
     private Playlist getPlaylistOrThrow(User user, int playlistId) throws PlaylistNotFoundException{
-        // To see if user value is null or not
-        if (user == null) {
-            throw new IllegalArgumentException("User cannot be null");
-        }
 
         // Iterating through playlists & searching for the playlist that matches the playlistId
         for (Playlist p : user.getPlaylists()) {

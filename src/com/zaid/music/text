@@ -6,3 +6,14 @@ Song repository is where we are storing all the songs
 //TODO: Debug a program
 Understand how input value functions are working. add comments learn what program is doing in better way
 //Illegal argument exception
+
+
+Things I have added this week :-
+1. Refractor CLI menu
+2. Added new method to show all the songs available in playlist menu
+3. Added a new playlist not found exception
+4. Added try-catch blocks
+
+Things I'll need to fix :-
+1. ListALlSongs function in removePlaylist method
+       - I need to show all the available songs in a playlist, so that user can correctly remove the song

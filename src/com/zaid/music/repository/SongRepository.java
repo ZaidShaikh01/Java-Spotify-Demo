@@ -18,10 +18,6 @@ public class SongRepository {
 
     //Add songs to repository
     public void addSong(Song song) {
-        // Checking if song is null
-        if (song == null) {
-            throw new IllegalArgumentException("Song cannot be null");
-        }
         // If song is already present in repository
         if(songMap.containsKey(song.getSongId())){
             System.out.println("Song already exists!!");

@@ -20,6 +20,7 @@ public class MusicService {
             throw new IllegalArgumentException("Enter a valid ID");
         }
 
+        // Getting the song from the songRepository
         Song song = repo.getSongById(id);
 
         //Checking if song exists or not, if not throwing an error
@@ -31,10 +32,6 @@ public class MusicService {
 
     // Add Song
     public void addSong(Song song){
-        //Checking if song exists or not, if not throwing an error
-        if(song == null){
-            throw new IllegalArgumentException("Song cannot be null");
-        }
         repo.addSong(song);
     }
 
@@ -45,7 +42,7 @@ public class MusicService {
         if (id<=0){
             throw new IllegalArgumentException("Enter a valid ID");
         }
-
+        // Getting songs from repo
         Song song = repo.getSongById(id);
 
         //Checking if song exists or not, if not throwing an error

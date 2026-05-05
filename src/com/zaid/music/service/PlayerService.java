@@ -24,11 +24,6 @@ public class PlayerService {
 
     // To start the song play
     public void play(Song song){
-        // To see if song is null or not
-        if(song == null){
-            throw new IllegalArgumentException("Song cannot be null");
-        }
-
         // Updating the values
         this.isPlaying = true;
         this.currentSong = song;
@@ -43,8 +38,12 @@ public class PlayerService {
             System.out.println("No song to stop");
             return;
         }
+        if (!isPlaying){
+            System.out.println("Already Paused");
+        }
         // Updating the value
         this.isPlaying = false;
+
         System.out.println("Paused " + currentSong.getTitle());
     }
 
