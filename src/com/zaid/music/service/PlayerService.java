@@ -11,10 +11,12 @@ public class PlayerService {
         this.currentSong = null;
         this.isPlaying = false;
     }
+
     // To see which song is currently played
     public Song getCurrentSong() {
         return currentSong;
     }
+
     // To check the status of play/pause
     public boolean isPlaying() {
         return isPlaying;
@@ -34,6 +36,7 @@ public class PlayerService {
         System.out.println("Playing " + currentSong.getTitle());
     }
 
+    // To pause a song
     public void pause(){
         // To see if the song is null or not
         if(currentSong == null){
@@ -45,6 +48,7 @@ public class PlayerService {
         System.out.println("Paused " + currentSong.getTitle());
     }
 
+    // To resume a song
     public void resume(){
         // To see if song is null or not
         if (currentSong == null){

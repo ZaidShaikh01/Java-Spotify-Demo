@@ -21,6 +21,7 @@ public class MusicService {
         }
 
         Song song = repo.getSongById(id);
+
         //Checking if song exists or not, if not throwing an error
         if(song == null){
             throw new SongNotFoundException("Song with ID " + id + " not found");

@@ -1,5 +1,6 @@
 package com.zaid.music.service;
 
+import com.zaid.music.exception.PlaylistNotFoundException;
 import com.zaid.music.exception.SongNotFoundException;
 import com.zaid.music.model.Playlist;
 import com.zaid.music.model.Song;
@@ -31,7 +32,7 @@ public class PlaylistService {
     }
 
     // addSongToPlaylist()
-    public void addSongToPlaylist(User user,int playlistId,int songId) throws SongNotFoundException {
+    public void addSongToPlaylist(User user,int playlistId,int songId) throws SongNotFoundException,PlaylistNotFoundException {
         // To see if Id is valid or not
         if (playlistId <= 0) {
             throw new IllegalArgumentException("Invalid playlist ID");
@@ -48,7 +49,7 @@ public class PlaylistService {
 
 
     // removeSongFromPlaylist()
-    public void removeSongFromPlaylist(User user,int playlistId,int songId) throws SongNotFoundException {
+    public void removeSongFromPlaylist(User user,int playlistId,int songId) throws SongNotFoundException,PlaylistNotFoundException {
         // To see if ID is valid or not
         if (playlistId <= 0) {
             throw new IllegalArgumentException("Invalid playlist ID");
@@ -65,7 +66,7 @@ public class PlaylistService {
     }
 
     // Get playlist
-    public Playlist getPlaylist(User user,int playlistId){
+    public Playlist getPlaylist(User user,int playlistId) throws PlaylistNotFoundException{
         // To see if ID is valid or not
         if (playlistId <= 0) {
             throw new IllegalArgumentException("Invalid playlist ID");
@@ -75,7 +76,7 @@ public class PlaylistService {
     }
 
     // Get Playlist or throw
-    private Playlist getPlaylistOrThrow(User user, int playlistId) {
+    private Playlist getPlaylistOrThrow(User user, int playlistId) throws PlaylistNotFoundException{
         // To see if user value is null or not
         if (user == null) {
             throw new IllegalArgumentException("User cannot be null");
@@ -88,7 +89,7 @@ public class PlaylistService {
             }
         }
         // if not playlist is available in user list
-        throw new IllegalArgumentException("Playlist not found");
+        throw new PlaylistNotFoundException("playlist with ID " + playlistId + " not found");
     }
 
 

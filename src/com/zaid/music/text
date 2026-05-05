@@ -1,3 +1,8 @@
 //TODO: Know what remove functions do
 //TODO: Know why to override toString method
 Song repository is where we are storing all the songs
+//TODO: ADD TRY CATCH FOR INPUTS
+//TODO: Improve CLI menus
+//TODO: Debug a program
+Understand how input value functions are working. add comments learn what program is doing in better way
+//Illegal argument exception

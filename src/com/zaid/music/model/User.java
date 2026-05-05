@@ -36,6 +36,7 @@ public class User {
     public void  addPlaylist(Playlist playlist){
         playlists.add(playlist);
     }
+
     // Method to remove a playlist from the list
 
     public void removePlaylist(Playlist playlist){
